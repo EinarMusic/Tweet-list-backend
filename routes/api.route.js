@@ -102,4 +102,8 @@ router.get("/specific", async (req, res) => {
   res.status(200).send(recent);
 });
 
+router.get("/", async (req, res) => {
+  res.status(200).send({ message: "route Twitter API!" });
+});
+
 module.exports = router;
