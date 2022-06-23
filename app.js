@@ -10,15 +10,17 @@ const port = process.env.PORT || 3030;
 // import Routes
 app.use("/api", require("./routes/api.route"));
 
+app.use("/", require("./routes/index"));
+
 // Middleware
 app.use(cors);
 app.use(bodyParse.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(morgan("dev"));
 
-app.get("/", (req, res) => {
-  res.json({ message: "Hello World" });
-});
+// app.get("/", (req, res) => {
+//   res.json({ message: "Hello World" });
+// });
 
 app.listen(port, () => {
   console.log(`A NodeJs API is listining on port: ${port}`);
