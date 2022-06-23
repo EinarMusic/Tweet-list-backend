@@ -5,7 +5,7 @@ const bodyParse = require("body-parser");
 require("dotenv/config");
 
 const app = express();
-// const port = process.env.PORT || 3030;
+const port = process.env.PORT || 3030;
 
 // import Routes
 app.use("/api", require("./routes/api.route"));
@@ -20,6 +20,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello World" });
 });
 
-// app.listen(port, () => {
-//   console.log(`A NodeJs API is listining on port: ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`A NodeJs API is listining on port: ${port}`);
+});
