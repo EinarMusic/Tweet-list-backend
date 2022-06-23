@@ -5,7 +5,7 @@ const client = new Twitter({
   consumer_key: process.env.TWITTER_CONSUMER_API_KEY,
   consumer_secret: process.env.TWITTER_CONSUMER_API_SECRET,
   access_token_key: process.env.TWITTER_ACCESS_TOKEN,
-  access_token_secret: process.env.TWITTER_ACCESS_SECRET
+  access_token_secret: process.env.TWITTER_ACCESS_SECRET,
   //bearer_token: process.env.BEARER_TOKEN
 });
 
@@ -21,8 +21,8 @@ router.get("/tweet", async (req, res) => {
         "name",
         "username",
         "profile_image_url",
-        "verified"
-      ]
+        "verified",
+      ],
     },
     media: {
       fields: [
@@ -34,8 +34,8 @@ router.get("/tweet", async (req, res) => {
         "public_metrics",
         "type",
         "url",
-        "alt_text"
-      ]
+        "alt_text",
+      ],
     },
     tweet: {
       fields: [
@@ -49,9 +49,9 @@ router.get("/tweet", async (req, res) => {
         "public_metrics",
         "referenced_tweets",
         "author_id",
-        "attachments"
-      ]
-    }
+        "attachments",
+      ],
+    },
   });
 
   res.status(200).send(recent);
@@ -68,8 +68,8 @@ router.get("/specific", async (req, res) => {
         "name",
         "username",
         "profile_image_url",
-        "verified"
-      ]
+        "verified",
+      ],
     },
     media: {
       fields: [
@@ -80,8 +80,8 @@ router.get("/specific", async (req, res) => {
         "public_metrics",
         "type",
         "url",
-        "alt_text"
-      ]
+        "alt_text",
+      ],
     },
     tweet: {
       fields: [
@@ -94,16 +94,12 @@ router.get("/specific", async (req, res) => {
         "public_metrics",
         "referenced_tweets",
         "author_id",
-        "attachments"
-      ]
-    }
+        "attachments",
+      ],
+    },
   });
 
   res.status(200).send(recent);
-});
-
-router.get("/", async (req, res) => {
-  res.status(200).send({ message: "Ok api is working!" });
 });
 
 module.exports = router;
