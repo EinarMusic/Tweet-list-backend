@@ -8,7 +8,7 @@ const app = express();
 const port = process.env.PORT || 3030;
 
 // import Routes
-app.use("/api", require("./routes/api.route"));
+app.use("/api", require("./routes/api"));
 
 app.use("/", require("./routes/index"));
 
