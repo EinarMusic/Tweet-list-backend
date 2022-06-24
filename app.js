@@ -18,9 +18,9 @@ app.use(bodyParse.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(morgan("dev"));
 
-// app.get("/", (req, res) => {
-//   res.json({ message: "Hello World" });
-// });
+app.get("/mas", (req, res) => {
+  res.json({ message: "Hello World" });
+});
 
 app.listen(port, () => {
   console.log(`A NodeJs API is listining on port: ${port}`);
