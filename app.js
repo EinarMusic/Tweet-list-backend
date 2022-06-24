@@ -33,7 +33,8 @@ const client = new Twitter({
 });
 
 app.get("/", async (req, res) => {
-  const user = req.query.user;
+  // const user = req.query.user;
+  const user = "jack";
   const recent = await client.get("tweets/search/recent", {
     query: `from:${user}`,
     expansions: ["author_id", "attachments.media_keys"],
